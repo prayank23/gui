@@ -20,3 +20,4 @@ FORMS += \
 
 RESOURCES += \
     ../src/qt/bitcoin.qrc
+    ../src/qt/style.qrc

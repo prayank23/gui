@@ -90,6 +90,17 @@ BitcoinGUI::BitcoinGUI(interfaces::Node& node, const PlatformStyle *_platformSty
 
     setContextMenuPolicy(Qt::PreventContextMenu);
 
+    QFile f("src/qt/style.qss");
+
+    if (!f.exists())   {
+    printf("Unable to set stylesheet, file not found\n");
+    }
+    else   {
+    f.open(QFile::ReadOnly | QFile::Text);
+    QTextStream ts(&f);
+    qApp->setStyleSheet(ts.readAll());
+    }
+
 #ifdef ENABLE_WALLET
     enableWallet = WalletModel::isWalletEnabled();
 #endif // ENABLE_WALLET
