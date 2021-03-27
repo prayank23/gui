@@ -63,6 +63,7 @@
 #include <QUrlQuery>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <QTextStream>
 
 
 const std::string BitcoinGUI::DEFAULT_UIPLATFORM =
